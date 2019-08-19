@@ -4,7 +4,7 @@
       labels:
         app: sample-gs-spring-boot-docker
       name: sample-gs-spring-boot-docker
-    #  namespace: dex-dev
+      namespace: hotspot-reward
     spec:
       ports:
       - port: 80
