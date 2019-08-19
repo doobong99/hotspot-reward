@@ -2,7 +2,7 @@
 
     def label = "jenkins-${UUID.randomUUID().toString()}"
 
-    def ZCP_USERID='09798'
+    def ZCP_USERID='05867'
     def DOCKER_IMAGE='sample/gs-spring-boot-docker'
     def K8S_NAMESPACE='hotspot-reward'
 
