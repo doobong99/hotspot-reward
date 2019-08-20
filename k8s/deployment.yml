@@ -16,7 +16,7 @@
         spec:
           containers:
           - name: hotspot-reward
-            image: dep-dev-registry.cloudzcp.io/hotspot/hotspot-reward:1
+            image: dep-dev-registry.cloudzcp.io/sample/hotspot-reward:1
           imagePullSecrets:
           - name: jonas-secret 
     #        ports:
