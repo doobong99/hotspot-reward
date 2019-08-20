@@ -2,13 +2,13 @@
     kind: Service
     metadata:
       labels:
-        app: sample-gs-spring-boot-docker
-      name: sample-gs-spring-boot-docker
-      namespace: hotspot-reward
+        app: hotspot-reward
+      name: hotspot-reward
+      namespace: dex-dev
     spec:
       ports:
       - port: 80
         protocol: TCP
         targetPort: 8080
       selector:
-        app: hotspot-reward-gs-spring-boot-docker
+        app: hotspot-reward
