@@ -1,11 +1,8 @@
 server:
   port: 8080
-  servlet:
-    context-path: /reward
+  context-path: /reward
 
 spring:
-  application:
-#    basePath: /reward
   datasource:
 #    Internal
     url: jdbc:mariadb://10.178.230.98:3306/hotspot_reward
