@@ -1,11 +1,16 @@
 server:
   port: 8080
-  context-path: /reward
+  servlet:
+    context-path: /reward
 
 spring:
+  application:
+#    basePath: /reward
   datasource:
-#    url: jdbc:mariadb://10.178.230.98:3306
-    url: jdbc:mariadb://169.56.96.234:3306/hotspot_reward
+#    Internal
+    url: jdbc:mariadb://10.178.230.98:3306/hotspot_reward
+#    External
+#    url: jdbc:mariadb://169.56.96.234:3306/hotspot_reward
     driverClassName: org.mariadb.jdbc.Driver
     username: hotspot_reward_user
     password: ureka97@ma

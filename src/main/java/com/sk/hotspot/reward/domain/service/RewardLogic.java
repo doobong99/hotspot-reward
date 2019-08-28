@@ -20,8 +20,13 @@ public class RewardLogic implements RewardService {
 	
 	@Override
 	public Reward findByUserId(String userId) {
-		
-		return rewardRepository.findByUserId(userId);
+		Reward reward = rewardRepository.findByUserId(userId);
+		if(reward == null) {
+			reward = new Reward(userId, 0);
+			rewardRepository.save(reward);
+			
+		}
+		return reward;
 	}
 
 	@Override

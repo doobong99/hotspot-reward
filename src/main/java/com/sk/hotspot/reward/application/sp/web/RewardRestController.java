@@ -3,7 +3,9 @@ package com.sk.hotspot.reward.application.sp.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +21,7 @@ public class RewardRestController implements RewardService {
 
 	@Override
 	@GetMapping("/{userId}")
-	public Reward findByUserId(String userId) {
+	public Reward findByUserId(@PathVariable(value = "userId", required = true) String userId) {
 		System.out.println("findByUserId");
 		Reward result = rewardService.findByUserId(userId);
 		return result;
@@ -27,7 +29,7 @@ public class RewardRestController implements RewardService {
 
 	@Override
 	@PutMapping
-	public Reward update(RewardHistory reward) {
+	public Reward update(@RequestBody RewardHistory reward) {
 		System.out.println("update");
 		Reward result = rewardService.update(reward);
 		return result;
@@ -35,7 +37,7 @@ public class RewardRestController implements RewardService {
 
 	@Override
 	@DeleteMapping("/{userId}")
-	public void delete(String userId) {
+	public void delete(@PathVariable(value = "userId", required = true) String userId) {
 		System.out.println("delete");
 		rewardService.delete(userId);
 	}

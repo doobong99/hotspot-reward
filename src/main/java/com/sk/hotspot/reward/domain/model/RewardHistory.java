@@ -11,6 +11,7 @@ import javax.persistence.Id;
 
 import com.sk.hotspot.reward.base.AggregateRoot;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
@@ -18,12 +19,18 @@ import lombok.Data;
 public class RewardHistory implements AggregateRoot {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@ApiModelProperty(required = false, hidden = true)
 	protected Long id;
 
+	@ApiModelProperty(required = true, position = 1)
 	private String userId;
+	@ApiModelProperty(required = true, position = 2)
 	@Enumerated(EnumType.STRING)
 	private RewardType pointchangetype;
+	@ApiModelProperty(required = true, position = 3)
 	private Integer rewardpoint;
+	
+	@ApiModelProperty(required = false, hidden = true)
 	private Timestamp createdate = new Timestamp(System.currentTimeMillis());
 	
 	public RewardHistory(String userId, RewardType pointchangetype, Integer rewardpoint) {
